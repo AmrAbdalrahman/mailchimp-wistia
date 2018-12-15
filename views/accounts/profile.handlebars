@@ -1,0 +1,23 @@
+
+<div class="container">
+
+{{#if message.length}}
+
+
+    <div class="alert alert-success alert-dismissible">
+
+        <button class="close" type="button" data-dismiss="alert" aria-label="close">
+            <span aria-hidden="true">&times;</span>
+
+        </button>
+        {{message}}
+
+    </div>
+{{/if}}
+
+
+<p>{{user.profile.name}}</p>
+
+<img src="{{user.profile.picture}}" alt="">
+
+</div>

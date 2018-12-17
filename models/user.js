@@ -22,6 +22,10 @@ const UserSchema = new Schema({
         course: { type: Schema.Types.ObjectId, ref: 'Course'}
     }],
 
+    revenue: [{
+        money: Number
+    }]
+
 });
 
 module.exports = mongoose.model('User',UserSchema);

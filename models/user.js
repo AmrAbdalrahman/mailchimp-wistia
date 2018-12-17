@@ -7,6 +7,7 @@ const UserSchema = new Schema({
 
     facebook: String,
     tokens: Array,
+    role: String,
 
     profile: {
         name: {type: String, default: ''},

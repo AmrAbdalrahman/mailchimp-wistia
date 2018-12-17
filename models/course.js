@@ -8,8 +8,11 @@ const CourseSchema = new  Schema({
     wistiaId: String,
     price: Number,
     ownByTeacher: {type: Schema.Types.ObjectId, ref: 'User'},
-    ownByStudent: {type: Schema.Types.ObjectId, ref: 'User'},
+    ownByStudent: [{
+        user:{type: Schema.Types.ObjectId, ref: 'User'},
+    }],
     totalStudents: Number
+
 
 });
 

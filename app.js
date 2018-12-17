@@ -20,6 +20,14 @@ const secret = require('./config/secret');
 require('./config/passport')(passport);
 */
 
+//Handlebars Helpers
+const {
+   ifCond
+} = require('./helpers/hbs')
+
+
+
+
 mongoose.Promise = global.Promise;
 //Mongoose Connect
 mongoose.connect(secret.database,{useNewUrlParser: true}).then(()=>{
@@ -59,6 +67,9 @@ app.use(function (req,res,next) {
 
 //Handle Middleware
 app.engine('handlebars', exphbs({
+    helpers:{
+        ifCond: ifCond,
+    },
     defaultLayout: 'main'
 }));
 
@@ -72,6 +83,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 require('./routes/main')(app);
 require('./routes/user')(app);
+require('./routes/teacher')(app);
 
 const port = process.env.PORT || secret.port;
 

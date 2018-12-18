@@ -1,0 +1,63 @@
+<div class="jumbotron">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-6 col-md-offset-3">
+
+                <form action="/payment" method="POST">
+                    <input type="hidden" name="courseId" value="{{course._id}}"/>
+                    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+                            data-key="pk_test_s5MCQ9ddIg5tuYexEzKCyIxj"
+                            data-amount="{{course.price}}>"
+                            data-name="Stripe.com"
+                            data-description="Widget"
+                            data-image=""
+                            data-locale="auto">
+
+                    </script>
+
+
+                </form>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-7">
+            <h2>Description</h2>
+            {{course.desc}}
+        </div>
+
+        <div class="col-lg-5">
+            <h2>Enrolled Students</h2>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Students
+                </div>
+
+                <div class="panel-body">
+
+                    {{#ifCond course.ownByStudent.length '==' 0 }}
+
+                        <p>0</p>
+
+                    {{else}}
+                        {{#each course.ownByStudent}}
+
+                            <div class="col-xs-2">
+                                <img src="{{user.profile.picture}}"/>
+                            </div>
+                        {{/each}}
+                    {{/ifCond}}
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

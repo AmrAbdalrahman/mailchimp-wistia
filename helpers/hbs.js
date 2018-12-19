@@ -29,4 +29,8 @@ module.exports = {
 
     },
 
+    get_length:function (obj) {
+        return (obj.length || 0);
+    },
+
 }

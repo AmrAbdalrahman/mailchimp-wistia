@@ -22,7 +22,7 @@ require('./config/passport')(passport);
 
 //Handlebars Helpers
 const {
-   ifCond
+   ifCond,get_length
 } = require('./helpers/hbs')
 
 
@@ -69,6 +69,7 @@ app.use(function (req,res,next) {
 app.engine('handlebars', exphbs({
     helpers:{
         ifCond: ifCond,
+        get_length: get_length
     },
     defaultLayout: 'main'
 }));

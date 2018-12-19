@@ -12,7 +12,6 @@ module.exports ={
         profileFields: ['emails','displayName'],
         callbackURL: 'https://almagic-academy.herokuapp.com/auth/facebook/callback',
         passReqToCallback: true,
-
     }
 
 }

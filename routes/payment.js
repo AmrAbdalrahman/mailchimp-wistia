@@ -21,7 +21,7 @@ module.exports = function (app) {
                 });
 
             },
-            function (callback) {
+            function (foundCourse , callback) {
                 stripe.customers.create({
                     source: stripeToken,
                     email: req.user.email

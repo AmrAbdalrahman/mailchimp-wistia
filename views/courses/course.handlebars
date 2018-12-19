@@ -1,20 +1,29 @@
 
 <div class="container">
-    <div id="wistia_{{ course.wistiaId }}" class="wistia_embed" style="width:1000px;height:625px;" data-video-width="1000" data-video-height="625">&nbsp;</div>
+    <div id="wistia_{{ course.wistiaId }}" class="wistia_embed" style="width:1000px;height:563px;" data-video-width="1000" data-video-height="563">&nbsp;</div>
     <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/playlist-v1.js"></script>
     <script>
-        wistiaPlaylist = Wistia.playlist("{{course.wistiaId}}", {
+        wistiaPlaylist = Wistia.playlist("{{ course.wistiaId }}", {
             version: "v1",
             theme: "tab",
             videoOptions: {
                 volumeControl: true,
+                playerColor: "54bbff",
                 autoPlay: true,
                 videoWidth: "1000",
-                videoHeight: "625"
+                videoHeight: "563",
+                inlineOptionsOnly: true,
+                version: "v1"
             },
+            videoFoam: "false",
             media_0_0: {
                 autoPlay: false,
                 controlsVisibleOnLoad: false
+            },
+            plugin: {
+                "requireEmail-v1": {
+                    topText: "Enter your email address\nto view this video."
+                }
             }
         });
     </script>

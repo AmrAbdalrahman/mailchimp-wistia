@@ -85,6 +85,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 require('./routes/main')(app);
 require('./routes/user')(app);
 require('./routes/teacher')(app);
+require('./routes/payment')(app);
 
 const port = process.env.PORT || secret.port;
 

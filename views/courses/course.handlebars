@@ -1,6 +1,6 @@
 
 <div class="container">
-    <div id="wistia_<%= course.wistiaId %>" class="wistia_embed" style="width:1000px;height:625px;" data-video-width="1000" data-video-height="625">&nbsp;</div>
+    <div id="wistia_{{ course.wistiaId }}" class="wistia_embed" style="width:1000px;height:625px;" data-video-width="1000" data-video-height="625">&nbsp;</div>
     <script charset="ISO-8859-1" src="//fast.wistia.com/assets/external/playlist-v1.js"></script>
     <script>
         wistiaPlaylist = Wistia.playlist("{{course.wistiaId}}", {
